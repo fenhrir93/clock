@@ -7,3 +7,16 @@
   margin: 0;
   padding: 0;
 }
+
+.center {
+  @apply flex
+  justify-center
+  items-center;
+}
+
+@layer base {
+  .neon {
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px #0fa,
+      0 0 20px #0fa, 0 0 30px #0fa, 0 0 55px #0fa, 0 0 80px #0fa;
+  }
+}
