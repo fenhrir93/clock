@@ -1,24 +1,29 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-const WrapperButton = styled.button({
+export const WrapperButton = styled.button({
   backgroundColor: (props) => (props.color ? props.color : "blue"),
   borderTopRightRadius: (props) => (props.radius ? props.radius : "6px"),
   borderTopLeftRadius: (props) => (props.radius ? props.radius : "6px"),
   padding: (props) => (props.padding ? props.padding : "2px"),
 });
 
-export const Button = ({
+export const TimerButton = ({
   text,
   active = false,
   color,
   activeColor,
+  marginBottom,
   ...props
 }) => {
-  console.log(text);
   return (
     <WrapperButton
-      style={buttonActiveStylesHandler(active, color, activeColor)}
+      style={buttonActiveStylesHandler(
+        active,
+        color,
+        activeColor,
+        marginBottom
+      )}
       {...props}
     >
       {text}
@@ -26,12 +31,12 @@ export const Button = ({
   );
 };
 
-function buttonActiveStylesHandler(active, color, activeColor) {
+function buttonActiveStylesHandler(active, color, activeColor, marginBottom) {
   if (active) {
     const actvColor = `${activeColor ? activeColor : "red"}`;
     return {
       backgroundColor: `${actvColor}`,
-      marginBottom: "-10px",
+      marginBottom: marginBottom ? "" : "-10px",
       boxShadow: `0 0 50px 10px ${actvColor}`,
     };
   } else {
@@ -42,9 +47,10 @@ function buttonActiveStylesHandler(active, color, activeColor) {
   }
 }
 
-Button.propTypes = {
-  text: PropTypes.string.isRequired,
+TimerButton.propTypes = {
   active: PropTypes.bool.isRequired,
+  text: PropTypes.string,
   color: PropTypes.string,
   activeColor: PropTypes.string,
+  marginBottom: PropTypes.bool,
 };

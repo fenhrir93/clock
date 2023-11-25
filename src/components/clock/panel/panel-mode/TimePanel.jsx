@@ -12,5 +12,5 @@ export const TimePanel = () => {
       clearInterval(intervalId);
     };
   }, []);
-  return <div> {time}</div>;
+  return <div>{time}</div>;
 };
