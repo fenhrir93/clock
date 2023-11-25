@@ -2,7 +2,7 @@ import { TimePanel } from "./panel-mode/TimePanel";
 import { ModeContextProvider } from "../../../Mode.context";
 import { useContext } from "react";
 import { TimerPanel } from "./panel-mode/TimerPanel";
-import { StopwatchPane } from "./panel-mode/StopwatchPane";
+import { StopwatchPanel } from "./panel-mode/StopwatchPanel";
 export const Panel = () => {
   const { clockClicked, timerClicked, stopwatchClicked } =
     useContext(ModeContextProvider);
@@ -15,7 +15,7 @@ export const Panel = () => {
     >
       {clockClicked && <TimePanel />}
       {timerClicked && <TimerPanel />}
-      {stopwatchClicked && <StopwatchPane />}
+      {stopwatchClicked && <StopwatchPanel />}
     </div>
   );
 };
