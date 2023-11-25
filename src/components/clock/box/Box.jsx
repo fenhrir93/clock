@@ -9,6 +9,8 @@ export const Box = () => {
      border-black
      border-8
      rounded-3xl
+     z-10
+     relative
      center
      "
       >

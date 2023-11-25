@@ -1,18 +1,6 @@
-import moment from "moment";
-import { useEffect, useState } from "react";
+import { TimePanel } from "./time/TimePanel";
 
 export const Panel = () => {
-  const [time, setTime] = useState();
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(moment().format("HH:mm:ss"));
-    }, 1e2);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
   return (
     <div>
       <p
@@ -21,7 +9,7 @@ export const Panel = () => {
       neon
       "
       >
-        {time}
+        <TimePanel />
       </p>
     </div>
   );
