@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Panel } from "../panel/Panel";
 import { ModeSwitcher } from "./ModeSwitcher";
+
 
 export const Box = () => {
   return (

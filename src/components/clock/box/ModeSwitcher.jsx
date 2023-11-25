@@ -1,13 +1,21 @@
 import PropTypes from "prop-types";
 import { Button } from "../../../UI/Button";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ModeContextProvider } from "../../../Mode.context";
 
 const BUTTONS_CONFIG = [{}];
 
 export const ModeSwitcher = ({ mode, children }) => {
-  const [clockClicked, setClockClicked] = useState(true);
-  const [timerClicked, setTimerClicked] = useState(false);
-  const [stopwatchClicked, setStopwatchClicked] = useState(false);
+  const {
+    clockClicked,
+    timerClicked,
+    stopwatchClicked,
+    onTimeModeHandler,
+    onTimerModeHandler,
+    onStopwatchModeHandler,
+  } = useContext(ModeContextProvider);
+  console.log(clockClicked);
+
   return (
     <div>
       <header className="center gap-4 h-7">
@@ -16,33 +24,21 @@ export const ModeSwitcher = ({ mode, children }) => {
           active={clockClicked}
           color="#7071E8"
           activeColor="#C683D7"
-          onClick={() => {
-            setClockClicked(true);
-            setTimerClicked(false);
-            setStopwatchClicked(false);
-          }}
+          onClick={onTimeModeHandler}
         />
         <Button
           text="Timer"
           active={timerClicked}
           color="green"
           activeColor="yellow"
-          onClick={() => {
-            setTimerClicked(true);
-            setClockClicked(false);
-            setStopwatchClicked(false);
-          }}
+          onClick={onTimerModeHandler}
         />
         <Button
           text="Stopwatch"
           active={stopwatchClicked}
           color="#7ED7C1"
           activeColor="#F0DBAF"
-          onClick={() => {
-            setStopwatchClicked(true);
-            setClockClicked(false);
-            setTimerClicked(false);
-          }}
+          onClick={onStopwatchModeHandler}
         />
       </header>
       {children}
