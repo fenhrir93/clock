@@ -1,8 +1,8 @@
 import { PanelButtons } from "./PanelButtons";
 import { useTimerHook } from "../../../../hooks/useTimerHook";
 
-export const TimerPanel = () => {
-  const timerConfig = useTimerHook({ isTimer: true });
+export const StopwatchPanel = () => {
+  const timerConfig = useTimerHook({ isTimer: false });
 
   return (
     <div className="center flex-col">
