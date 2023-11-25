@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export const ModeSwitcher = ({ mode, children }) => {
   return (
     <div>
-      <header className="flex justify-center gap-4">
+      <header className="center gap-4">
         <button>Clock</button>
         <button>Timer</button>
         <button>Stopwatch</button>
