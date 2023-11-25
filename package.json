@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "moment": "^2.29.4",
+    "observable-hooks": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rxjs": "^7.8.1",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {

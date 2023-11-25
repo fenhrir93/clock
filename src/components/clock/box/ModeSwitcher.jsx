@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Button } from "../../../UI/Button";
+import { TimerButton } from "../../../UI/TimerButton";
 import { useContext, useState } from "react";
 import { ModeContextProvider } from "../../../Mode.context";
 
@@ -19,21 +19,21 @@ export const ModeSwitcher = ({ mode, children }) => {
   return (
     <div>
       <header className="center gap-4 h-7">
-        <Button
+        <TimerButton
           text="Clock"
           active={clockClicked}
           color="#7071E8"
           activeColor="#C683D7"
           onClick={onTimeModeHandler}
         />
-        <Button
+        <TimerButton
           text="Timer"
           active={timerClicked}
           color="green"
           activeColor="yellow"
           onClick={onTimerModeHandler}
         />
-        <Button
+        <TimerButton
           text="Stopwatch"
           active={stopwatchClicked}
           color="#7ED7C1"
@@ -47,6 +47,6 @@ export const ModeSwitcher = ({ mode, children }) => {
 };
 
 ModeSwitcher.propTypes = {
-  mode: PropTypes.string.isRequired,
+  mode: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
